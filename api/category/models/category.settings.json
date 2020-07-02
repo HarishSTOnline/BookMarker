@@ -1,26 +1,23 @@
 {
   "kind": "collectionType",
-  "collectionName": "bookmarks",
+  "collectionName": "categories",
   "info": {
-    "name": "Bookmarks"
+    "name": "Category"
   },
   "options": {
     "increments": true,
     "timestamps": true
   },
   "attributes": {
-    "Title": {
-      "type": "string",
-      "required": true
-    },
-    "URL": {
+    "Name": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "categories": {
-      "via": "bookmarks",
-      "collection": "category"
+    "bookmarks": {
+      "collection": "bookmarks",
+      "via": "categories",
+      "dominant": true
     }
   }
 }
